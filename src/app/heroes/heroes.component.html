@@ -1,22 +1,38 @@
-<h2>{{hero.name | uppercase}} Details</h2>
-<div><span>id: </span>{{hero.id}}</div>
-<div>
-<label for="name"> Nombre del antiheroe: </label>
-  <input id="name" [(ngModel)]="hero.name" placeholder="name"> 
-</div>
-<div>
-  <label for="edad"> Edad del antiheroe: </label>
-  <input id="edad" [(ngModel)]="hero.edad" placeholder="edad"> 
-</div>
-<div>
-  <label for="tippoder"> Tipo de poder: </label>
-  <input id="tippoder" [(ngModel)]="hero.tippoder" placeholder="tippoder"> 
-</div>
-<div>
-  <label for="identidad"> Identidad: </label>
-  <input id="identidad" [(ngModel)]="hero.identidad" placeholder="identidad"> 
-</div>
-<div>
-  <label for="universo"> Universo: </label>
-  <input id="universo" [(ngModel)]="hero.universo" placeholder="universo"> 
+<h2>Mis Antiheroes Favoritos</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>{{hero.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name | uppercase}} Detalles</h2>
+<div><span>id: </span>{{selectedHero.id}}</div>
+
+  <div>
+    <label for="hero-name"> Nombre del antiheroe: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name"> 
+  </div>
+
+  <div>
+    <label for="hero-edad"> Edad del antiheroe: </label>
+    <input id="hero-edad" [(ngModel)]="selectedHero.edad" placeholder="edad"> 
+  </div>
+
+  <div>
+    <label for="hero-tippoder"> Tipo de poder: </label>
+    <input id="hero-tippoder" [(ngModel)]="selectedHero.tippoder" placeholder="tippoder"> 
+  </div>
+
+  <div>
+    <label for="hero-identidad"> Identidad: </label>
+    <input id="hero-identidad" [(ngModel)]="selectedHero.identidad" placeholder="identidad"> 
+  </div>
+
+  <div>
+    <label for="hero-universo"> Universo: </label>
+    <input id="hero-universo" [(ngModel)]="selectedHero.universo" placeholder="universo"> 
+  </div>
 </div>
