@@ -15,8 +15,8 @@
   border-radius: 4px;
 }
 .heroes li:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
+  color: #3f4441;
+  background-color: #c4fb6d;
   left: .1em;
 }
 .heroes li.selected {
@@ -34,9 +34,9 @@
 .heroes .badge {
   display: inline-block;
   font-size: small;
-  color: white;
+  color: 3f3f44;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
+  background-color:#a7d129;
   line-height: 1em;
   position: relative;
   left: -1px;
